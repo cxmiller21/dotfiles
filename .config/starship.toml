@@ -14,7 +14,12 @@ min_time = 5000
 format = 'underwent [$duration](bold yellow)'
 
 [aws]
-disabled = true
+format = 'on [$symbol($profile )(\($region\) )]($style)'
+style = 'bold blue'
+symbol = '🅰 '
+[aws.region_aliases]
+us-west-1 = 'usw1'
+us-west-2 = 'usw2'
 
 [azure]
 format = 'on [$symbol($subscription)]($style) '
@@ -30,7 +35,8 @@ truncate_to_repo = true
 disabled = true
 
 [git_branch]
-ignore_branches = ['master', 'main']
+# ignore_branches = ['master', 'main']
+ignore_branches = []
 
 [git_status]
 conflicted = '🏳'

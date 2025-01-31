@@ -68,3 +68,38 @@ alias kubectl='kubecolor'
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Custom
+alias cl='clear'
+alias fk='fuck' # thef... alias
+alias home='cd ~/'
+
+# Git aliases
+alias gs='git status'
+alias gc='git commit'
+alias gp='git pull --rebase'
+alias gcam='git commit -am'
+alias gl='git log --graph --pretty=format:"%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset" --abbrev-commit'
+
+# Docker aliases
+alias dcd='docker-compose down'
+alias dcu='docker-compose up'
+alias dcub='docker-compose up --build'
+alias dcur='docker-compose up --remove-orphans'
+
+# Terraform aliases
+alias ti='terraform init'
+alias tfm='terraform fmt'
+alias tv='terraform validate'
+alias tp='terraform plan'
+alias ta='terraform apply'
+
+# Terragrunt aliases
+alias tgi='terragrunt init'
+alias tgfm='terragrunt fmt'
+alias tgv='terragrunt validate-inputs'
+alias tgp='terragrunt plan'
+alias tga='terragrunt apply'
+
+# Nav Aliases
+alias cdgh='cd /Users/cooper.miller/Development/Strib'
