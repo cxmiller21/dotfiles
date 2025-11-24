@@ -5,7 +5,7 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Devbox
 DEVBOX_NO_PROMPT=true
-eval "$(devbox global shellenv --init-hook)"
+# eval "$(devbox global shellenv --init-hook)"
 
 # Git
 LANG=en_US.UTF-8
@@ -20,9 +20,6 @@ eval "$(starship init zsh)"
 
 # The Fuck
 eval $(thefuck --alias)
-
-# Zoxide
-eval "$(zoxide init --cmd cd zsh)"
 
 # kubecolor
 compdef kubecolor=kubectl
