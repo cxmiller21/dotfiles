@@ -3,8 +3,7 @@ sudo rm -rf \
     ~/.cache/devbox \
     .local/share/devbox \
     ~/.zshrc \
-    ~/.config/starship.toml \
-    ~/.config/fabric
+    ~/.config/starship.toml
 
 brew uninstall font-fira-code-nerd-font
 

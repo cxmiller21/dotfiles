@@ -5,7 +5,8 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Devbox
 DEVBOX_NO_PROMPT=true
-# eval "$(devbox global shellenv --init-hook)"
+USE_VALS=true
+eval "$(devbox global shellenv --init-hook)"
 
 # Git
 LANG=en_US.UTF-8
@@ -65,3 +66,7 @@ alias kubectl='kubecolor'
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+alias claude="/Users/viktorfarcic/.claude/local/claude"
+
+# HEIM ENVS
+. /Users/viktorfarcic/.heim/heim/env

@@ -66,3 +66,6 @@ disabled = false
 
 [nodejs]
 disabled = true
+
+[python]
+disabled = true
