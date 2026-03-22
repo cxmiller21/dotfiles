@@ -68,5 +68,8 @@ export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 alias claude="/Users/viktorfarcic/.claude/local/claude"
 
-# HEIM ENVS
-. /Users/viktorfarcic/.heim/heim/env
+# Google Cloud SDK
+source "/opt/homebrew/share/google-cloud-sdk/path.zsh.inc"
+source "/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc"
+
+export USE_VALS=true
