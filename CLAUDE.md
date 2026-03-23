@@ -25,6 +25,10 @@ devbox shell
 
 # Remove all installed tools and symlinks
 ./uninstall.sh
+
+# Linting and formatting (pre-commit framework)
+pre-commit install           # Install git hooks (one-time after clone)
+pre-commit run --all-files   # Run all linters/formatters
 ```
 
 ## How Stow Works Here

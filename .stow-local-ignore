@@ -13,3 +13,9 @@
 /sync.sh
 /devbox.lock
 /.DS_Store
+/.pre-commit-config.yaml
+/.editorconfig
+/.github
+/.yamllint.yml
+/.markdownlint.json
+/.shellcheckrc
