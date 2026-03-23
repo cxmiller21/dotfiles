@@ -4,4 +4,12 @@
 /devbox.*
 /gcloud
 /install.sh
+/Brewfile
+/vscode
 /.git
+/CLAUDE.md
+/README.md
+/uninstall.sh
+/sync.sh
+/devbox.lock
+/.DS_Store

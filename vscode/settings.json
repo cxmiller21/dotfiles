@@ -1,0 +1,135 @@
+{
+  "explorer.confirmDelete": false,
+  "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "window.zoomLevel": 2,
+  "explorer.confirmDragAndDrop": false,
+  "editor.inlineSuggest.enabled": true,
+  "python.formatting.provider": "black",
+  "window.commandCenter": true,
+  "terminal.integrated.shellIntegration.enabled": true,
+  "workbench.sideBar.location": "right",
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "git.confirmSync": false,
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": false,
+    "markdown": true
+  },
+  "[python]": {
+    "editor.formatOnType": true,
+    "editor.defaultFormatter": null,
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true
+  },
+  "files.trimTrailingWhitespace": true,
+  "pythonIndent.trimLinesWithOnlyWhitespace": true,
+  "redhat.telemetry.enabled": false,
+  "editor.tabSize": 2,
+  "editor.detectIndentation": false,
+  "editor.fontSize": 14,
+  "workbench.colorTheme": "Solarized Dark",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.cursorStyle": "underline",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.scrollback": 30000,
+  "gitlens.hovers.currentLine.enabled": false,
+  "debug.console.wordWrap": false,
+  "diffEditor.wordWrap": "off",
+  "workbench.editorAssociations": {
+    "{git,gitlens,conflictResolution,vscode-local-history}:/**/*.tc.json": "default",
+    "{git,gitlens,conflictResolution,vscode-local-history}:/**/*.{asl.json,asl.yaml,asl.yml}": "default",
+    "*.copilotmd": "vscode.markdown.preview.editor",
+    "*.csv": "default"
+  },
+  "go.toolsManagement.autoUpdate": true,
+  "settingsSync.ignoredSettings": [],
+  "settingsSync.ignoredExtensions": [],
+  "editor.formatOnSave": true,
+  "terraform.experimentalFeatures.validateOnSave": true,
+  "terraform.experimentalFeatures.prefillRequiredFields": true,
+  "[terraform]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveMode": "file",
+    "editor.tabSize": 2
+  },
+  "[terraform-vars]": {
+    "editor.defaultFormatter": "hashicorp.terraform",
+    "editor.formatOnSave": true,
+    "editor.tabSize": 2
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
+  },
+  "files.autoSave": "afterDelay",
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[markdown]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "files.insertFinalNewline": true,
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "editor.formatOnPaste": true,
+  "workbench.editorLargeFileConfirmation": 17185,
+  "editor.largeFileOptimizations": false,
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "makefile.configureOnOpen": true,
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "aws.telemetry": false,
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "git.ignoreRebaseWarning": true,
+  "[vue]": {
+    "editor.defaultFormatter": "Vue.volar"
+  },
+  "liveServer.settings.CustomBrowser": "chrome",
+  "liveServer.settings.root": ".output/public",
+  "window.confirmBeforeClose": "always",
+  "debug.javascript.autoAttachFilter": "always",
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "workbench.editor.empty.hint": "hidden",
+  "docker.extension.enableComposeLanguageServer": false,
+  "github.copilot.nextEditSuggestions.enabled": true,
+  "githubPullRequests.pullBranch": "never",
+  "jest.shell": "/bin/zsh",
+  "jest.jestCommandLine": "source ~/.zshrc && yarn test",
+  "[dockercompose]": {
+    "editor.insertSpaces": true,
+    "editor.tabSize": 2,
+    "editor.autoIndent": "advanced",
+    "editor.quickSuggestions": {
+      "other": true,
+      "comments": false,
+      "strings": true
+    },
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "[github-actions-workflow]": {
+    "editor.defaultFormatter": "redhat.vscode-yaml"
+  },
+  "gitlens.ai.model": "vscode",
+  "gitlens.ai.vscode.model": "copilot:gpt-4.1",
+  "docker.extension.dockerEngineAvailabilityPrompt": false,
+  "chat.mcp.gallery.enabled": true,
+  "aws.cloudformation.telemetry.enabled": false,
+  "terminal.external.osxExec": "iTerm.app",
+  "claudeCode.preferredLocation": "panel",
+  "claudeCode.selectedModel": "default"
+}

@@ -1,125 +1,125 @@
-# Dotfiles Setup and Synchronization
+# Dotfiles
 
-[![Master Your New Laptop Setup: Tools, Configs, and Secrets!](https://img.youtube.com/vi/FH083GOJoIM/0.jpg)](https://youtu.be/FH083GOJoIM)
-
-Setting up a new machine can be tedious, especially when it comes to configuring tools exactly the way you like them. This guide outlines how to automate the installation and synchronization of dotfiles, ensuring that all your machines are consistently configured.
+Personal dotfiles managed with [GNU Stow](https://www.gnu.org/software/stow/). Running `stow .` symlinks config files from this repo into `$HOME`.
 
 ## Prerequisites
 
-- A Unix-based system (macOS, Linux)
-- Git installed
-- Homebrew (for macOS users)
-- Devbox installed
-- Teller for secrets management
-- Stow for managing symlinks
+- macOS
+- [Homebrew](https://brew.sh/)
+- Git
 
-## Installation
-
-### Clone the Repository
+## Quick Start
 
 ```sh
-cd ~/
-git clone https://github.com/<org>/dotfiles
-cd dotfiles
-git pull
-git fetch
-git checkout dotfiles
+# Clone the repo
+git clone https://github.com/cxmiller21/dotfiles.git ~/dotfiles
+cd ~/dotfiles
+
+# Install core tools (Zinit, fonts, Ghostty, Devbox, etc.)
 chmod +x install.sh
-```
-
-### Run the Installation Script
-
-```sh
 ./install.sh
-```
 
-This script installs the necessary global CLI tools, including:
+# Install CLI tools, languages, and applications from Brewfile
+brew bundle
 
-- Starship prompt
-- Zinit
-- TheFuck
-- Fira Code font
-- Eza
-- Fzf
-- Zoxide
-- Bat
-- Devbox
+# Back up existing dotfiles
+mv ~/.zshrc ~/.zshrc.bak
+mv ~/.config/starship.toml ~/.config/starship.toml.bak
 
-If you're not using macOS, adapt the script for your package manager.
-
-## Configuring Dotfiles
-
-### Backup Existing Dotfiles
-
-Before replacing existing configuration files, back them up:
-
-```sh
-mv ~/.zshrc ~/.zshrc-orig
-mv ~/.config/starship.toml ~/.config/starship.toml-orig
-mv ~/.config/fabric ~/.config/fabric-orig
-```
-
-### Verify Installation
-
-Ensure that the necessary dotfiles do not exist before proceeding:
-
-```sh
-cat ~/.zshrc
-cat ~/.config/starship.toml
-```
-
-If these files are missing, proceed with synchronization.
-
-## Synchronization
-
-### Start Devbox Shell
-
-```sh
-devbox shell
-```
-
-This ensures project-specific tools are available.
-
-### Run the Synchronization Script
-
-```sh
+# Symlink dotfiles into $HOME
 ./sync.sh
 source ~/.zshrc
 ```
 
-This script:
+## What Gets Installed
 
-1. Logs into Google Cloud (`gcloud auth login`)
-2. Retrieves secrets using Teller
-3. Removes existing `.zshrc`
-4. Uses `stow` to create symlinks for dotfiles
+### `install.sh` — Core Tools
 
-## Managing Dotfiles with Git
+One-time Homebrew installs for tools not managed elsewhere:
 
-To keep configurations updated:
+- [Zinit](https://github.com/zdharma-continuum/zinit) — Zsh plugin manager
+- [Fira Code](https://github.com/tonsky/FiraCode) font (regular + Nerd Font)
+- [Ghostty](https://ghostty.org/) terminal
+- [Devbox](https://www.jetify.com/devbox/) — Nix-based dev environments
+- [OBS](https://obsproject.com/)
+- kubecolor, bat, starship, thefuck, kubectl
+
+### `Brewfile` — CLI Tools & Applications
+
+Declarative Homebrew bundle (`brew bundle`) for everything else:
+
+- **CLI:** git, curl, wget, nvm, ffmpeg, nushell
+- **Cloud & Infra:** ansible, argocd, helm, eksctl, skaffold, terraform (via devbox)
+- **Languages:** Go, Python 3.13, pipx, pnpm, poetry
+- **Security:** gitleaks, trufflehog, bfg, tailscale
+- **Casks:** Docker, VS Code, 1Password, Chrome, iTerm2, Claude, Obsidian, Slack, Zoom, and more
+
+### `devbox.json` — Project Dev Shell
+
+Nix packages available in `devbox shell` for this repo:
+
+- kind, google-cloud-sdk, gum, stow, gh, jq, yq
+- kubectl, teller, awscli, terraform, terragrunt, nodejs
+
+### Devbox Global — Daily Shell Tools
+
+Packages available in all shells (`~/.local/share/devbox/global/default/devbox.json`):
+
+- starship, bat, zoxide, fzf, eza, thefuck, gh, mise
+
+## How Stow Works
+
+The repo root is the stow directory. `stow .` creates symlinks from files here into `$HOME`. Files and directories listed in `.stow-local-ignore` are excluded from symlinking:
+
+- `.devbox/`, `.git/`, `.gitignore`, `.teller.yml`, `.DS_Store`
+- `devbox.*`, `devbox.lock`, `gcloud/`, `install.sh`, `Brewfile`, `vscode/`
+- `CLAUDE.md`, `README.md`, `sync.sh`, `uninstall.sh`
+
+Any new file added to the repo root **will** be symlinked to `$HOME` — add it to `.stow-local-ignore` if that's not intended.
+
+## Shell Configuration
+
+`.zshrc` sets up:
+
+- **Prompt:** [Starship](https://starship.rs/) with emoji git status indicators
+- **Plugins (Zinit):** autosuggestions, syntax highlighting, history substring search
+- **Navigation:** [zoxide](https://github.com/ajeetdsouza/zoxide) (`cd` replacement), fzf
+- **Tools:** eza (`ls`), bat (`cat`), kubecolor (`kubectl`), thefuck
+- **Runtime managers:** mise (Python, etc.), NVM (Node.js), pnpm
+- **Completions:** devbox, docker, kubectl, terragrunt
+- **Aliases:** git, docker-compose, terraform, terragrunt, kubectl
+
+## VS Code Setup
+
+VS Code settings are **not** managed by Stow. Use the setup script:
 
 ```sh
-git add .
-git commit -m "Update configurations"
-git push
+./vscode/setup.sh
 ```
 
-To pull changes on another machine:
+This installs extensions from `vscode/extensions.txt` and symlinks `vscode/settings.json` into `~/Library/Application Support/Code/User/`.
+
+## Syncing Changes
 
 ```sh
-git pull origin main
+# After modifying dotfiles
+./sync.sh
+source ~/.zshrc
+
+# Pull updates on another machine
+git pull
 ./sync.sh
 source ~/.zshrc
 ```
 
-## Conclusion
-
-Using Git, Devbox, Teller, and Stow, you can seamlessly set up and synchronize dotfiles across multiple machines. This approach ensures a consistent development environment whether you're using a desktop or a laptop.
-
-## Cleanup
+## Uninstall
 
 ```sh
-mv ~/.zshrc-orig ~/.zshrc
-mv ~/.config/starship.toml-orig ~/.config/starship.toml
-mv ~/.config/fabric-orig ~/.config/fabric
+./uninstall.sh
 ```
+
+Removes Devbox, symlinked configs, and Homebrew-installed tools (starship, thefuck, fonts, bat, etc.).
+
+## Secrets Management
+
+[Teller](https://github.com/tellerops/teller) (`.teller.yml`) pulls secrets from Google Secret Manager. Requires `gcloud auth login` first.

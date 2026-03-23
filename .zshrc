@@ -66,17 +66,50 @@ alias kubectl='kubecolor'
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 
+# Custom Exports
+export DEFAULT_USER=$USER
+export DEV_USER="cooperxmiller"
 # Google Cloud SDK
 source "/opt/homebrew/share/google-cloud-sdk/path.zsh.inc"
 source "/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc"
 
 export USE_VALS=true
 
+# Zoxide
+eval "$(zoxide init --cmd cd zsh)"
+
+# NVM
+source /opt/homebrew/opt/nvm/nvm.sh
+
+# mise
+eval "$(mise activate zsh)"
+
+# pnpm
+export PNPM_HOME="$HOME/Library/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
+# Terragrunt completion
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /opt/homebrew/bin/terragrunt terragrunt
+
+# Python (managed by mise: `mise use --global python@3.13`)
+alias python=python3
+
 # Custom
 alias cl='clear'
 alias fk='fuck' # thef... alias
 alias home='cd ~/'
+
+# Mac Utils
+alias dls='mac-utils dl-song'
+alias mudls='mac-utils dl-song'
+alias mudlv='mac-utils dl-video'
+alias dlv='mac-utils dl-video'
 
 # Git aliases
 alias gs='git status'
@@ -106,4 +139,4 @@ alias tgp='terragrunt plan'
 alias tga='terragrunt apply'
 
 # Nav Aliases
-alias cdgh='cd /Users/cooper.miller/Development/Strib'
+alias cdgh='cd /Users/cooperxmiller/Development/Github'
