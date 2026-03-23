@@ -1,3 +1,5 @@
+#!/bin/bash
+
 brew install font-fira-code-nerd-font
 
 # https://github.com/zdharma-continuum/zinit?tab=readme-ov-file#install

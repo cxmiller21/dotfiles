@@ -43,6 +43,7 @@ brew "youtube-dl"
 # Casks
 cask "1password"
 cask "claude"
+cask "cmux"
 cask "dbeaver-community"
 cask "docker"
 cask "google-chrome"
