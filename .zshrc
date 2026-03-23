@@ -5,6 +5,7 @@ setopt HIST_IGNORE_ALL_DUPS
 
 # Devbox
 DEVBOX_NO_PROMPT=true
+USE_VALS=true
 eval "$(devbox global shellenv --init-hook)"
 
 # Git
@@ -20,9 +21,6 @@ eval "$(starship init zsh)"
 
 # The Fuck
 eval $(thefuck --alias)
-
-# Zoxide
-eval "$(zoxide init --cmd cd zsh)"
 
 # kubecolor
 compdef kubecolor=kubectl
@@ -68,6 +66,12 @@ alias kubectl='kubecolor'
 export PATH="$HOME/go/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
+
+# Google Cloud SDK
+source "/opt/homebrew/share/google-cloud-sdk/path.zsh.inc"
+source "/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc"
+
+export USE_VALS=true
 
 # Custom
 alias cl='clear'

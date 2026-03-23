@@ -7,8 +7,8 @@ bash -c "$(curl --fail --show-error --silent \
 # https://github.com/tonsky/FiraCode/wiki/Installing
 brew install --cask font-fira-code
 
-# https://www.kcl-lang.io/docs/user_docs/getting-started/install#homebrew-macos-1
-brew install kcl-lang/tap/kcl-lsp
+# https://ghostty.org/docs/install/binary
+brew install --cask ghostty
 
 # https://www.jetify.com/devbox/docs/installing_devbox/
 curl -fsSL https://get.jetify.com/devbox | bash
@@ -21,3 +21,12 @@ brew install kubecolor
 
 # https://github.com/sharkdp/bat
 brew install bat
+
+# https://formulae.brew.sh/formula/starship
+brew install starship
+
+# https://formulae.brew.sh/formula/thefuck
+brew install thefuck
+
+# https://formulae.brew.sh/formula/kubernetes-cli
+brew install kubernetes-cli
