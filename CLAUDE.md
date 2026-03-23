@@ -64,4 +64,4 @@ Teller (`.teller.yml`) pulls secrets from Google Secret Manager (project `vfarci
 
 ## Runtime Version Management
 
-mise is used for managing language runtimes (e.g., `mise use --global python@3.13`). NVM handles Node.js versions. Both are initialized in `.zshrc`.
+mise is used for managing language runtimes (e.g., `mise use --global python@3.14`). NVM handles Node.js versions. Both are initialized in `.zshrc`.

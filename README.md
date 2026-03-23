@@ -50,7 +50,7 @@ Declarative Homebrew bundle (`brew bundle`) for everything else:
 
 - **CLI:** git, curl, wget, nvm, ffmpeg, nushell
 - **Cloud & Infra:** ansible, argocd, helm, eksctl, skaffold, terraform (via devbox)
-- **Languages:** Go, Python 3.13, pipx, pnpm, poetry
+- **Languages:** Go, Python 3.14, pipx, pnpm, poetry
 - **Security:** gitleaks, trufflehog, bfg, tailscale
 - **Casks:** Docker, VS Code, 1Password, Chrome, iTerm2, Claude, Obsidian, Slack, Zoom, and more
 

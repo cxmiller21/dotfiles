@@ -71,9 +71,10 @@ export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
 # Custom Exports
 export DEFAULT_USER=$USER
 export DEV_USER="cooperxmiller"
+
 # Google Cloud SDK
-source "/opt/homebrew/share/google-cloud-sdk/path.zsh.inc"
-source "/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc"
+# source "/opt/homebrew/share/google-cloud-sdk/path.zsh.inc"
+# source "/opt/homebrew/share/google-cloud-sdk/completion.zsh.inc"
 
 export USE_VALS=true
 
@@ -94,10 +95,12 @@ case ":$PATH:" in
 esac
 
 # Terragrunt completion
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /opt/homebrew/bin/terragrunt terragrunt
+if command -v terragrunt &>/dev/null; then
+  autoload -U +X bashcompinit && bashcompinit
+  complete -o nospace -C "$(command -v terragrunt)" terragrunt
+fi
 
-# Python (managed by mise: `mise use --global python@3.13`)
+# Python (installed via Homebrew)
 alias python=python3
 
 # Custom
