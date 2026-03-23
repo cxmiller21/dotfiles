@@ -18,8 +18,8 @@ format = 'on [$symbol($profile )(\($region\) )]($style)'
 style = 'bold blue'
 symbol = '🅰 '
 [aws.region_aliases]
-us-west-1 = 'usw1'
-us-west-2 = 'usw2'
+us-east-1 = 'use1'
+us-east-2 = 'use2'
 
 [azure]
 format = 'on [$symbol($subscription)]($style) '
@@ -71,7 +71,7 @@ format = 'via [$symbol$state](bold purple) '
 disabled = false
 
 [nodejs]
-disabled = true
+disabled = false
 
 [python]
-disabled = true
+disabled = false

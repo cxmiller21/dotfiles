@@ -1,0 +1,7 @@
+[user]
+	email = cooperxmiller@gmail.com
+	name = Cooper
+[pull]
+	ff = only
+[init]
+	defaultBranch = main
